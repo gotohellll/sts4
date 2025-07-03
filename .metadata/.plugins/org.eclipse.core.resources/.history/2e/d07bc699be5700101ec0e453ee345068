@@ -1,0 +1,13 @@
+package com.example.service;
+
+
+import java.util.List;
+
+import com.example.domain.BoardVO;
+
+public interface BoardService {
+	
+	List<BoardVO> getBoardList();
+	
+	BoardVO insertBoard(BoardVO vo);
+}

@@ -1,0 +1,12 @@
+package com.example.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.domain.BoardVO;
+
+@Mapper
+public interface BoardDAO {
+	void getBoardList(BoardVO vo);
+	
+	BoardVO getBoard(Integer seq);
+}

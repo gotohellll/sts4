@@ -1,0 +1,18 @@
+package com.example.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.domain.BoardVO;
+
+@Mapper
+public interface BoardDAO {
+	
+	List<BoardVO> getBoardList();
+	
+	BoardVO getBoard(BoardVO vo);
+	
+	void saveBoard(BoardVO vo);
+	// public abstract 생략 
+}

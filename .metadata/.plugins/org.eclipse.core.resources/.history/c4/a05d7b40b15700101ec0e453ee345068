@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"">
+
+<mapper>
+
+</mapper>
+
+<!-- resources/mappers/BoardMapper.xml-->
+<!-- xml 파일 앞에는 주석 안됨 -->

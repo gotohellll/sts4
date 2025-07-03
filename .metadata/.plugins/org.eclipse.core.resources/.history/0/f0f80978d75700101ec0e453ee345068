@@ -1,0 +1,14 @@
+package com.example.dao;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.domain.MemberVO;
+
+@Mapper
+public interface MemberDAO {
+	
+	@Insert("INSERT INTO member(id, name, pass) "
+			+ "	VALUES(#{id}, #{name}, #{pass})")
+	public void insertMember(MemberVO vo);
+}

@@ -1,0 +1,4 @@
+spring.application.name=bBoardJsp
+
+# web port number
+#server.port=8000

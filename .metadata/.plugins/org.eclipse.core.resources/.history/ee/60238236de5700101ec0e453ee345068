@@ -1,0 +1,63 @@
+package com.example.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.domain.MemberVO;
+import com.example.service.MemberService;
+
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+@RequestMapping("member")
+public class MemberController {
+	
+	Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
+	@Autowired
+	private MemberService service;
+	
+	@RequestMapping("/{step}")
+	public String main(@PathVariable String step) {
+		
+		logger.info("[MemberController] 요청 " + step);
+		
+		return "member/" + step;
+	}
+	
+	@RequestMapping("/insertMember")
+	public String insertMember(MemberVO vo) {
+		logger.info("[MemberController - insertMember] 요청");
+		
+		service.insertMember(vo);
+		
+		return "redirect:saveMember";
+	}
+	
+	@RequestMapping("/selectMember")
+	public String selectMember(MemberVO vo, HttpSession session) {
+		logger.info("[MemberController - selectMember] 요청");
+		
+		MemberVO result = service.selectMember(vo);
+		
+		if(result==null) {
+			return "redirect:loginForm";
+		}else {
+			session.setAttribute("logname", result.getId());
+			
+			return "redirect:loginSuccess";
+		}
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		logger.info("[MemberController - logout] 요청");
+		return "redirect:/member/loginForm";
+	}
+	
+}

@@ -1,0 +1,22 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+
+<!DOCTYPE>
+<head>
+<meta charset="UTF-8">
+<title>로그인성공</title>
+</head>
+
+<body>
+ 
+	
+	<h1>로그인성공페이지</h1>
+	<div> ${sessionScope.logname} 님로그인성공</div>
+	
+	<hr/>
+	<input type="button" name="logout" id="logout">로그아웃</input>
+</body>
+<script>
+	
+	
+</script>
+</html>

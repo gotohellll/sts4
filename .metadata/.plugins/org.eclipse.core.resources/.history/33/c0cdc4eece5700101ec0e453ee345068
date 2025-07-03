@@ -1,0 +1,27 @@
+package com.example.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.domain.BoardVO;
+
+@Mapper
+public interface BoardDAO {
+	
+	//<select id="getBoardList" resultType="BoardVO"> parameter없음 
+	public List<BoardVO> getBoardList();
+	
+	//<select id="getBoard" parameterType="BoardVO" resultType="BoardVO"> parameter가 인자로 
+	public BoardVO getBoard(BoardVO vo);
+	
+	//<insert id="saveBoard" parameterType="BoardVO"> result가없어 void 또는 Integer 
+	public void saveBoard(BoardVO vo);
+	// public abstract 생략
+	
+	public void insertBoard(BoardVO vo);
+	
+	public void updateBoard(BoardVO vo);
+	
+	public void deleteBoard(BoardVO vo);
+}

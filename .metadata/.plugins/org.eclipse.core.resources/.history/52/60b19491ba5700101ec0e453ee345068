@@ -1,0 +1,11 @@
+package com.example.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.example.domain.BoardVO;
+
+public interface BoardService {
+	
+	List<BoardVO> getBoardList(HashMap map);
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.BoardDAO">
+
+	<!-- 전체 레코드 검색 -->
+	<select id="getBoardList" resultType="BoardVO">
+		SELECT 
+			* 
+		FROM 
+			board
+		ORDER BY
+			seq DESC
+	
+	</select>
+	
+	<!-- 상세 레코드 검색 -->
+	<select id="getBoard" parameterType="BoardVO" resultType="BoardVO">
+		SELECT 
+			*
+		FROM
+			board
+		WHERE
+			seq=#{seq}
+	</select>
+	
+	<!-- 레코드 입력 -->
+	<insert id="saveBoard" parameterType="BoardVO">
+		INSERT INTO
+			board(title, writer, content, regdate, cnt)
+		VALUES
+			(#{title}, #{writer}, #{content}, now(), 0)
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="updateBoard" parameterType="BoardVO">
+		UPDATE 
+			board
+		SET
+			title = #{title}
+			,content = #{content}
+		WHERE
+			seq = #{seq} 
+	
+	</update>
+	
+</mapper>
+
+<!-- resources/mappers/BoardMapper.xml-->
+<!-- xml 파일 앞에는 주석 안됨 -->
+<!-- mysql에서는 sysdate(), now() => 함수 표시 -->
+<!-- mysql은 시퀀스 명시하면 안됨 -->
+<!-- join이 있을 경우 resultMap 사용 -->
+<!-- application.properties에 설정해두어 resultType="com.example.domain.BoardVO" 대신 BoardVO만 사용 가능 -->
