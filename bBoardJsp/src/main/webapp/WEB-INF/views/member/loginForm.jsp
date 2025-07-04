@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td bgcolor="orange">패스워드</td>
-			<td align="left"><input type="text" name="pass" size="10"/></td>
+			<td align="left"><input type="text" name="pass" size="10" value="${member.pass}"/></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit"	value=" 로그인 "/></td>

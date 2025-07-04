@@ -12,7 +12,7 @@ import com.example.domain.BoardVO;
 public interface BoardDAO {
 	
 	//<select id="getBoardList" resultType="BoardVO"> parameter없음
-	@Select("SELECT * FROM board ORDER BY seq DESC")
+	@Select("SELECT * FROM board ORDER BY seq DESC") //어노테이션 사용하려면 application.properties에서 mapper location 주석
 	public List<BoardVO> getBoardList();
 	
 	//<select id="getBoard" parameterType="BoardVO" resultType="BoardVO"> parameter가 인자로
