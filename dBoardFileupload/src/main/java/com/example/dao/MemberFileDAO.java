@@ -9,5 +9,4 @@ public interface MemberFileDAO {
 	
 	public void insertMemberFile(MemberFileVO mvo);
 	
-	public MemberFileVO selectMemberId(MemberFileVO mvo);
 }
