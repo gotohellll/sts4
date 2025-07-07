@@ -21,7 +21,7 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberFileDAO memberFileDAO;
 	
-	Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
+	Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	
 	@Transactional
 	public void insertMember(MemberVO vo, MemberFileVO mvo) {

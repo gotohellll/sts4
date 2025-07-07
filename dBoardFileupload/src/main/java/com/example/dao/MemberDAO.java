@@ -16,5 +16,4 @@ public interface MemberDAO {
 //	@Select("SELECT * FROM member WHERE id=#{id}")
 	public HashMap selectMember(MemberVO vo);
 	
-	public String selectId();
 }
