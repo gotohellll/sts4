@@ -11,11 +11,11 @@
 	<table border="1">
 		<tr>
 			<td bgcolor="orange" width="70">아이디</td>
-			<td align="left"><input type="text" name="id" value="${member.id}"/></td>
+			<td align="left"><input type="text" name="id" /></td>
 		</tr>
 		<tr>
 			<td bgcolor="orange">패스워드</td>
-			<td align="left"><input type="text" name="pass" size="10" value="${member.pass}"/></td>
+			<td align="left"><input type="text" name="pass" size="10"/></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit"	value=" 로그인 "/></td>

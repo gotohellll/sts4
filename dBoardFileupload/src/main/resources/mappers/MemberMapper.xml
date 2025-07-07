@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.MemberDAO">
+
+	<insert id="insertMember" parameterType="MemberVO">
+		INSERT INTO member(id, name, pass)
+		VALUES(#{id}, #{name}, #{pass})
+	</insert>
+	
+	<select id="selectMember" parameterType="MemberVO" resultType="hashmap">
+		SELECT 
+			m.id id
+			,m.name name
+			,m.pass pass
+			,mf.fileid fileid
+			,mf.filename filename
+			,mf.filepath filepath
+			,mf.originFilename originFilename
+		FROM member m 
+		LEFT OUTER JOIN member_file mf 
+		ON m.id = mf.member_id
+		WHERE m.id = #{id}
+	</select>
+
+
+</mapper>
