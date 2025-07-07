@@ -11,12 +11,6 @@
 			(#{member_id},#{originFilename},#{filename},#{filepath})
 	</insert>
 
-
-	<select id="selectMemberId" parameterType="MemberFileVO" resultType="MemberFileVO">
-		SELECT *
-		FROM member_file
-		WHERE file_id = #{fileid}
-	</select>
 	
 	
 
