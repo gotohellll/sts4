@@ -1,0 +1,9 @@
+package com.example.service;
+
+import com.example.domain.MemberVO;
+
+public interface MemberService {
+	void insertMember(MemberVO vo);
+	
+	MemberVO selectMember(MemberVO vo);
+}
